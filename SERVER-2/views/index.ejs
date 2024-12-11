@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333333;
+            margin: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #00796b;
+        }
+    
+        form {
+            margin: 20px auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #009688;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+    
+        button:hover {
+            background-color: #00796b;
+            transform: scale(1.05);
+        }
+    
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+    
+        th {
+            background-color: #00796b;
+            color: white;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+    
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    
+        tr:hover {
+            background-color: #e0f2f1;
+        }
+    
+        .del-btn {
+            background-color: #e53935;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+    
+        .del-btn a {
+            color: white;
+            text-decoration: none;
+        }
+    
+        .del-btn:hover {
+            background-color: #d32f2f;
+            transform: scale(1.1);
+        }
+    
+        /* Add subtle form animation */
+        form {
+            animation: fadeIn 1s ease-out;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Student Details</h1>
+    <form method="post" action="/add">
+        <input type="text" name="name" placeholder="Enter Student Name" required/>
+        <input type="text" name="course" placeholder="Enter Student Course" required/>
+        <button type="submit">Submit</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.map((el,ind)=>{ %>
+                <tr>
+                    <td><%=ind+1%></td>
+                    <td><%=el.name%></td>
+                    <td><%=el.course%></td>
+                    <td><button class="del-btn"><a href="/delete?id=<%=el.id%>">Delete</a></button></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
