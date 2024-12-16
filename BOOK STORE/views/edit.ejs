@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+</head>
+<style>
+    body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+        .navbar {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #5a9baf;
+            transition: color 0.3s;
+        }
+
+        .logo:hover {
+            color: #4a8a9b;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #5a9baf;
+            transform: translateY(-3px);
+        }
+
+        .nav-links li::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #5a9baf;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-links li:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fb;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #5a9baf;
+            animation: fadeIn 2s ease-out;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            animation: slideIn 1s ease-out;
+        }
+
+        form input, form button {
+            width: 100%;
+            max-width: 575px;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        form input:focus, form button:hover {
+            border-color: #5a9baf;
+        }
+
+        form button {
+            background-color: #5a9baf;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #4a8a9b;
+        }
+
+</style>
+<body>
+    <nav class="navbar">
+        <div class="logo">BOOK STORE</div>
+        <ul class="nav-links">
+          <li><a href="">Home</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Categories</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Edit Book Details</h1>
+    <form action="/updatedata" method="post">
+        <input type="text" name="id" id="id" value="<%= singledata.id %>" hidden>
+        <input type="text" placeholder="Name" name="name" required value="<%= singledata.name %>">
+        <input type="text" placeholder="Author" name="Author" required value="<%= singledata.Author %>">
+        <input type="text" placeholder="Price" name="Price" required value="<%= singledata.Price %>">
+        <input type="date" placeholder="Published Date" name="Date" required value="<%= singledata.Date %>">
+        <input type="text" placeholder="Image URL" name="image" required value="<%= singledata.image %>">
+
+        <button type="submit">Update Data</button>
+    </form>
+</body>
+
+</html>
