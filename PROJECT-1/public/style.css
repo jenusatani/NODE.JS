@@ -1,0 +1,114 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.sec1{
+    height:100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://coffeeculture.co.in/wp-content/uploads/2021/04/IMG_8838-scaled.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+.sec2{
+    height:100vh;
+    background-image: url(https://coffeeculture.co.in/wp-content/uploads/2019/10/IMG_1853-1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+.bt-1{
+    height: 55px;
+    width: 200px;
+    border: 5px solid #ab8b65;
+    background-color:transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+}
+.bt-1:hover{
+    background-color: #ab8b65;
+    transition-duration: 0.2s;
+}
+.nav-link{
+    color: white;
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+}
+.nav-link:hover{
+color: #ab8b65;
+}
+#a1{
+    color: #ab8b65;
+}
+#a1:hover{
+    color: white;
+}
+.p1{
+    font-size: 40px;
+    font-family: "Oswald", sans-serif;
+}
+.bt-2{
+    height: 60px;
+    width: 175px;
+    border: 5px solid #ab8b65;
+    color: #ab8b65;
+    border-radius: 5px;
+    background-color:white;
+    font-size: 16px;
+}
+.bt-2:hover{
+    background-color: #ab8b65;
+    color: white;
+    transition-duration: 1s;
+}
+.yt{
+    height: 70%;
+    width: 70%;
+    border: 1px solid red;
+}
+.sec3{
+    height: 550px;
+    background-image: url(https://coffeeculture.co.in/wp-content/uploads/2019/10/IMG_6073.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.s1{
+    height: 400px;
+    width: 46%;
+    background:linear-gradient(rgba(2,2,2, 0.6),rgba(2,2,2, 0.6) );
+    border-radius: 10px;
+}
+.bt-3{
+    height: 60px;
+    width: 175px;
+    border: 5px solid #ab8b65;
+    color: #ab8b65;
+    border-radius: 5px;
+    background-color:transparent;
+    font-size: 16px;
+}
+.bt-3:hover{
+    background-color: #ab8b65;
+    color: white;
+    transition-duration: 1s;
+}
+.bt-4{
+    height: 55px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    background-color:#1290d0;
+    font-size: 18px;
+    
+}
+.bt-5{
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    background-color:#ab8b65;
+    color: white;
+}
