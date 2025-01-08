@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png" type="image/x-icon">
+    <title>Movie Tickets, Plays, Sports, Events</title>
+</head>
+<style>
+    /* Navbar styling */
+    .navbar {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             padding: 10px 20px;
+             background-color: #fff;
+             font-family: Arial, sans-serif;
+             width: 95%;
+         }
+ 
+         .navbar-left {
+             display: flex;
+             align-items: center;
+         }
+ 
+         .navbar-brand .logo {
+             height: 40px;
+             margin-right: 15px;
+         }
+ 
+         .search-input {
+             width: 400px !important;
+             padding: 8px 10px !important;
+             border: 1px solid #ccc !important;
+             border-radius: 5px !important;
+             outline: none !important;
+             font-size: 14px !important;
+             margin-left: 50px !important;
+         }
+ 
+         .navbar-right {
+             display: flex;
+             align-items: center;
+         }
+ 
+         .location-dropdown {
+             display: flex;
+             align-items: center;
+             margin-right: 40px;
+             font-size: 14px;
+             cursor: pointer;
+         }
+ 
+         .arrow-down::after {
+             content: '▼';
+             font-size: 12px;
+             color: #666;
+             margin-left: 5px;
+         }
+ 
+         .add-in-btn {
+             background-color: #ff4b6b;
+             color: #fff;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 20px;
+             cursor: pointer;
+             font-size: 14px;
+             margin-right: 85px;
+             transition: background-color 0.3s ease;
+         }
+ 
+         .add-in-btn:hover {
+             background-color: #ff3366;
+         }
+ 
+         .menu-icon {
+             display: flex;
+             align-items: center;
+             cursor: pointer;
+             margin-left: -20px;
+         }
+ 
+         .menu-bars::before {
+             content: '\2630';
+             font-size: 24px;
+             color: #666;
+         }
+         body {
+     font-family: Arial, sans-serif;
+     background-color: #f9f9f9;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .nav-links {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 90px;
+     background-color: rgb(245,245,245);
+ }
+ 
+ .left-links a,
+ .right-links a {
+     margin: 0 15px;
+     text-decoration: none;
+     color: #333;
+     font-size: 16px;
+     font-weight: 500;
+ }
+ 
+ .left-links a:hover,
+ .right-links a:hover {
+     color: #ff4b6b;
+ }
+ 
+ .left-links {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .right-links {
+     display: flex;
+     align-items: center;
+ }
+ 
+ form {
+     background: linear-gradient(45deg, #007991, #78ffd6, #1b1b1b);
+     padding: 30px;
+     border-radius: 12px;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     width: 520px;
+     margin-left: 31%;
+ }
+ 
+ input[type="file"],
+ input[type="text"],
+ button {
+     padding: 12px;
+     border: 3px solid white;
+     border-radius: 6px;
+     font-size: 16px;
+     width: 100%;
+     box-sizing: border-box;
+ }
+ 
+ button {
+     background-color: #007991;
+     color: white;
+     border: none;
+     cursor: pointer;
+     transition: background-color 0.4s ease, transform 0.2s ease;
+     border: 3px solid white;
+ }
+ 
+ button:hover {
+     background-color: #005f6b;
+     transform: translateY(-3px);
+ }
+ 
+ @keyframes gradientAnimation {
+     0% { background-position: 0% 50%; }
+     50% { background-position: 100% 50%; }
+     100% { background-position: 0% 50%; }
+ }
+ 
+ h1 {
+     text-align: center;
+     margin-bottom: 25px;
+     font-size: 24px;
+     color: #333;
+ }
+ 
+ 
+ 
+ </style>
+<body>
+    <nav class="navbar">
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="/" class="navbar-brand">
+                    <img src="https://cdn.prod.website-files.com/600ee75084e3fe0e5731624c/65b6384089ec9e265952391f_bookmyshow-logo-vector-removebg-preview%20(1).png" alt="Brand Logo" class="logo"> <!-- Replace with your logo path -->
+                </a>
+                <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities" class="search-input">
+            </div>
+            <div class="navbar-right">
+                <div class="location-dropdown">
+                    <span>Rajkot</span>
+                    <i class="arrow-down"></i>
+                </div>
+                <div class="menu-icon">
+                    <i class="menu-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+
+    <nav class="nav-links">
+        <div class="left-links">
+            <a href="#">Movies</a>
+            <a href="#">Stream</a>
+            <a href="#">Events</a>
+            <a href="#">Plays</a>
+            <a href="#">Sports</a>
+            <a href="#">Activities</a>
+        </div>
+        <div class="right-links">
+            <a href="#">ListYourShow</a>
+            <a href="#">Corporates</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+        </div>
+    </nav>
+    <h1>Edit Movie</h1>
+    <form action="/updatedata" enctype="multipart/form-data" method="post">
+        <input type="text" name="id" id="id" value="<%= singledata.id %>" hidden>
+        <input type="text" placeholder="Name" name="name" required value="<%= singledata.name %>">
+        <input type="text" placeholder="Type" name="type" required value="<%= singledata.type %>">
+        <input type="text" placeholder="Rating" name="rating" required value="<%= singledata.rating %>">
+        <input type="file" name="image" required>
+        <img src="<%= singledata.image %>" alt="Book Image" style="width: 100px; height: 100px;">
+
+        <button type="submit">Update Data</button>
+    </form>
+</body>
+
+</html>

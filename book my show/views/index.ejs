@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://e7.pngegg.com/pngimages/919/445/png-clipart-bookmyshow-office-android-ticket-android-text-logo-thumbnail.png" type="image/x-icon">
+    <title>Movie Tickets, Plays, Sports, Events</title>
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+/>
+
+</head>
+<style>
+     .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            width: 95%;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand .logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .search-input {
+            width: 400px;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+            margin-left: 50px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .location-dropdown {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .arrow-down::after {
+            content: '▼';
+            font-size: 12px;
+            color: #666;
+            margin-left: 5px;
+        }
+
+        .add-in-btn {
+            background-color: #ff4b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 85px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-in-btn:hover {
+            background-color: #ff3366;
+        }
+
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-left: -20px;
+        }
+
+        .menu-bars::before {
+            content: '\2630';
+            font-size: 24px;
+            color: #666;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 90px;
+    background-color: rgb(245,245,245);
+}
+
+.left-links a,
+.right-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.left-links a:hover,
+.right-links a:hover {
+    color: #ff4b6b;
+}
+
+.left-links {
+    display: flex;
+    align-items: center;
+}
+
+.right-links {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Movie-card */
+
+
+.recommended-movies {
+  padding: 0px 80px;
+  font-family: Arial, sans-serif;
+}
+
+.recommended-movies h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.movies-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  border-radius: 20px;
+}
+
+.movie-card {
+  width: 250px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.movie-info .rating {
+  font-size: 14px;
+  color: #ff5722;
+}
+
+.movie-info h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.movie-info .genre {
+  font-size: 14px;
+  color: #757575;
+}
+
+
+
+
+
+
+
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  border-radius: 20px;
+  padding: 70px 80px;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 250px;
+  height: 580px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 328px;
+}
+
+#info{
+  padding: 10px;
+  text-align: center;
+}
+.rati{
+  position: relative;
+  bottom: 30px;
+  left: -10px;
+  width: 250px;
+  height: 30px;
+  background-color: #333;
+  color: white;
+}
+
+.card-actions .edit-button {
+   color: #3498db;
+   text-decoration: none;
+}
+
+.card-actions .edit-button:hover {
+   color: #2980b9;
+}
+
+.card-actions .delete-button {
+  color: #e74c3c;
+  text-decoration: none;
+}
+
+.card-actions .delete-button:hover {
+  color: #c0392b;
+}
+
+
+
+.card {
+    position: relative;
+    width: 250px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-actions {
+    position: absolute;
+    top: 92%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.card-actions1 {
+    position: absolute;
+    top: 92%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.card:hover .card-actions {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+    animation: bounce-in 0.5s ease-out;
+}
+
+.card:hover .card-actions1 {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+    animation: bounce-in 0.5s ease-out;
+}
+
+.card-actions a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 18px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-actions1 a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333 !important;
+    font-size: 18px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-actions a:hover {
+   color: white !important;
+   background-color: #3498db;
+   transform: scale(1.2);
+}
+
+.card-actions1 a:hover {
+    background-color: #333;
+    color: #fff !important;
+    transform: scale(1.2);
+}
+
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+</style>
+<body>
+    <nav class="navbar">
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="/" class="navbar-brand">
+                    <img src="https://cdn.prod.website-files.com/600ee75084e3fe0e5731624c/65b6384089ec9e265952391f_bookmyshow-logo-vector-removebg-preview%20(1).png" alt="Brand Logo" class="logo"> <!-- Replace with your logo path -->
+                </a>
+                <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities" class="search-input">
+            </div>
+            <div class="navbar-right">
+                <div class="location-dropdown">
+                    <span>Rajkot</span>
+                    <i class="arrow-down"></i>
+                </div>
+                <form  action="/adddata" method="get">
+                    <button class="add-in-btn" type="submit">Add Data</button>
+                </form>
+                <div class="menu-icon">
+                    <i class="menu-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </nav>
+
+
+    <nav class="nav-links">
+        <div class="left-links">
+            <a href="#">Movies</a>
+            <a href="#">Stream</a>
+            <a href="#">Events</a>
+            <a href="#">Plays</a>
+            <a href="#">Sports</a>
+            <a href="#">Activities</a>
+        </div>
+        <div class="right-links">
+            <a href="#">ListYourShow</a>
+            <a href="#">Corporates</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+        </div>
+    </nav>
+
+
+
+    <div class="recommended-movies">
+        <h2>Recommended Movies</h2>
+        <div class="movies-container">
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC40LzEwICA0MzAuNEsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00356724-gsglcmjwxd-portrait.jpg" alt="Pushpa 2: The Rule">
+            <div class="movie-info">
+              <h3>Pushpa 2: The Rule</h3>
+              <p class="genre">Action/Thriller</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny45LzEwICBFYXJseSBSYXRpbmdz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00419713-paygjlfgag-portrait.jpg" alt="Victor 303">
+            <div class="movie-info">
+              <h3>Victor 303</h3>
+              <p class="genre">Action/Drama</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC42LzEwICA4OC4xSyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00416394-jmmlluuywc-portrait.jpg" alt="Marco">
+            <div class="movie-info">
+              <h3>Marco</h3>
+              <p class="genre">Action/Thriller</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC40LzEwICA1OC4xSyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00396541-epynyumney-portrait.jpg" alt="Mufasa: The Lion King">
+            <div class="movie-info">
+              <h3>Mufasa: The Lion King</h3>
+              <p class="genre">Adventure/Animation/Drama</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4xLzEwICAxMDUgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00423687-vzjfnmqblz-portrait.jpg" alt="Kaashi Raaghav">
+            <div class="movie-info">
+              <h3>Kaashi Raaghav</h3>
+              <p class="genre">Drama</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <div class="recommended-movies">
+        <div class="movies-container">
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-Ny43LzEwICAxLjZLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00362457-wccpnkhyuq-portrait.jpg" alt="Kraven: The Hunter">
+            <div class="movie-info">
+              <h3>Kraven: The Hunter</h3>
+              <p class="genre">Action,Adventure,Sci-Fi</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-NTU5LjhLIExpa2Vz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00311772-btttlczzqg-portrait.jpg" alt="Game Changer">
+            <div class="movie-info">
+              <h3>Game Changer</h3>
+              <p class="genre">Action,Drama,Political</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4xLzEwICA3NyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00387384-bbnddyhdzj-portrait.jpg" alt="31st">
+            <div class="movie-info">
+              <h3>31st</h3>
+              <p class="genre">Crime,Drama</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4xLzEwICAxLjdLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00386814-rddzzmmbte-portrait.jpg" alt="Ajab Raat Ni Gajab Vaat">
+            <div class="movie-info">
+              <h3>Ajab Raat Ni Gajab Vaat</h3>
+              <p class="genre">Adventure,Comedy,Romantic</p>
+            </div>
+          </div>
+          <div class="movie-card">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICAxNC44SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00012104-dlbbxmwbtr-portrait.jpg" alt="Yeh Jawaani Hai Deewani">
+            <div class="movie-info">
+              <h3>Yeh Jawaani Hai Deewani</h3>
+              <p class="genre">Comedy,Drama,Musical,Romantic</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <% if (Movie.length === 0) { %>
+        <% } else { %>
+            <div class="card-container">
+                <% Movie.map((e, i) => { %>
+                    <div class="card">
+                        <div class="card-image">
+                            <img src='<%= e.image %>' alt="Book Image">
+                        </div>
+                        <div id="info" class="card-content">
+                            <p class="rati"><strong></strong> ⭐ <%= e.rating %>/10 430.4k votes</p>
+                            <p><strong>ID:</strong><%= e.id %></p>
+                            <h3><strong>Name:</strong> <%= e.name %></h3>
+                            <p><strong>Type:</strong> <%= e.type %></p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="/editdata?id=<%= e.id %>" class="edit-button">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </div>
+                        <div class="card-actions1">  
+                            <a href="/deletedata?id=<%= e.id %>" class="delete-button">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+        
+        
+  
+</body>
+
+</html>
