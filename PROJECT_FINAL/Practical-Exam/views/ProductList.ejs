@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Table</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #7FFF3F, #34840B);
+      padding: 20px;
+    }
+
+    .table-container {
+      width: 90%;
+      max-width: 800px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: #34840B;
+      color: white;
+      font-size: 18px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f3f3f3;
+    }
+
+    tbody tr:hover {
+      background: #7FFF3F;
+      color: white;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 18px;
+      padding: 5px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .edit-btn {
+      color: #34840B;
+    }
+
+    .edit-btn:hover {
+      color: #21610B;
+      transform: scale(1.1);
+    }
+
+    .delete-btn {
+      color: red;
+    }
+
+    .delete-btn:hover {
+      color: darkred;
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 600px) {
+      th, td {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((e, i) => { %>
+          <tr>
+            <td><%= i + 1 %></td>
+            <td><%= e.name %></td>
+            <td><%= e.price %></td>
+            <td>
+              <a href="/edit?id=<%= e._id %>"><button class="edit-btn"><i class="fa-solid fa-pen-to-square"></i></button></a>
+              <a href="/delete?id=<%= e._id %>"><button class="delete-btn"><i class="fa-solid fa-trash"></i></button></a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>

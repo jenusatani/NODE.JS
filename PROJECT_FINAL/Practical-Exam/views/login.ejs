@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #667eea, #764ba2);
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .inputBox {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .inputBox input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .inputBox span {
+            position: absolute;
+            left: 12px;
+            top: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .inputBox input:focus + span,
+        .inputBox input:valid + span {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            color: #ff7eb3;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .links a {
+            color: #ff7eb3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        #submit {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #ff7eb3;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        #submit:hover {
+            background: #ff3f80;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <form action="/loginData" method="post">
+            <h2>Sign In</h2>
+            <div class="inputBox">
+                <input type="text" name="email" required>
+                <span>User Email</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" name="password" required>
+                <span>Password</span>
+            </div>
+            <div class="links">
+                <a href="/navbar">Forgot Password?</a>
+                <a href="/">Sign Up</a>
+            </div>
+            <input type="submit" id="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>

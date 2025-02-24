@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #7fff3f, #34840b);
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            padding: 8px 15px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-item::after {
+            content: "";
+            width: 0;
+            height: 3px;
+            background: white;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transition: 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+
+        .nav-item:hover {
+            color: #7fff3f;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        #check {
+            display: none;
+        }
+
+        .icons {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Navbar */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row-reverse;
+            }
+
+            .navbar {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-item {
+                display: block;
+                padding: 10px;
+            }
+
+            .icons {
+                display: block;
+            }
+
+            #check:checked ~ .navbar {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class="fas fa-bars" id="menu-icon"></i>
+            <i class="fas fa-times" id="close-icon"></i>
+        </label>
+        
+        <nav class="navbar">
+            <a href="#" class="nav-item">Home</a>
+            <a href="/Productform" class="nav-item">Product Form</a>
+            <a href="/Productlist" class="nav-item">Product List</a>
+            <a href="/" class="nav-item">Sign Out</a>
+        </nav>
+    </header>
+
+    <h1>Products</h1>
+
+</body>
+</html>
